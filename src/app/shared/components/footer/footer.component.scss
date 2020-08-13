@@ -1,0 +1,21 @@
+@import '../../../../scss/color.scss';
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $dark-blue;
+    color: $white;
+}
+p a {
+    color: $white-opacity050;
+}
+.line {
+    border-color: $white;
+}
+.copyright {
+    font-size: 12px;
+}
+.copyright a {
+    color: $white;
+}
