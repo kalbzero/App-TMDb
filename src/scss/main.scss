@@ -1,1 +1,16 @@
 @import './color.scss';
+
+.title {
+    font-size: 32px;
+    color: $dark-gray
+}
+
+.subtitle {
+    font-size: 18px;
+    color: $dark-gray;
+}
+
+.text {
+    font-size: 14px;
+    color: $dark-gray;
+}

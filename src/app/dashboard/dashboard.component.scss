@@ -1,0 +1,25 @@
+@import '../../scss/color.scss';
+
+.scroller {
+    width: 100%;
+    max-width: 1300px;
+    min-height: 355px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    transition: height .5s linear;
+}
+.flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+.card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin-top: 0;
+    overflow: visible;
+}

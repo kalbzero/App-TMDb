@@ -20,7 +20,6 @@ export class Top100Component implements OnInit {
 
   ngOnInit() {
     this.movies = this.apiTmdbService.getTopRated();
-    console.log(this.movies);
   }
 
 }
