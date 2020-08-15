@@ -5,10 +5,11 @@
     </div>
 
     <div class="row">
-        <div class="col-12 col-md-3 my-3" *ngFor="let m of movies">
+        <div class="col-12 col-md-3 my-3 text-center" *ngFor="let m of movies">
             <div class="movie">
-                Movie
-                
+                <img data-src="https://image.tmdb.org/t/p/w220_and_h330_face{{m.poster_path}}" data-srcset="https://image.tmdb.org/t/p/w220_and_h330_face{{m.poster_path}} 1x, https://image.tmdb.org/t/p/w440_and_h660_face{{m.poster_path}} 2x" alt="" src="https://image.tmdb.org/t/p/w220_and_h330_face{{m.poster_path}}" srcset="https://image.tmdb.org/t/p/w220_and_h330_face{{m.poster_path}} 1x, https://image.tmdb.org/t/p/w440_and_h660_face{{m.poster_path}} 2x" data-loaded="true">
+                <p class="font-weight-bold">{{m.title}}</p>
+                <div class="font-weight-bold">{{m.vote_average *10}}%</div>
             </div>
         </div>
     </div>

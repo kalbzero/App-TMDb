@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedModule } from './shared/shared.module';
 import { Top100Component } from './top100/top100.component';
+import { MovieComponent } from './movie/movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    Top100Component
+    Top100Component,
+    MovieComponent
   ],
   imports: [
     BrowserModule,

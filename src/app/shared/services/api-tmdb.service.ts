@@ -7,6 +7,7 @@ import { environment } from '../../../environments/environment';
 import { Itop100 } from '../interfaces/itop100';
 import { User } from '../interfaces/user';
 import { IMovie } from '../interfaces/imovie';
+import { Movie } from '../class/movie';
 import { Genres } from '../class/genres';
 
 @Injectable({
@@ -37,8 +38,8 @@ export class ApiTmdbService {
    * Get the movies of that genre
    * @param id_genre - id of the genre
    */
-  getMoviesByGenre(id_genre: number): Observable<IMovie[]> {
-    return this.http.get<IMovie[]>(environment.api_v3_url+'discover/movie?api_key='+environment.api_key+'&with_genres='+id_genre);
+  getMoviesByGenre(id_genre: number): Observable<Movie> {
+    return this.http.get<Movie>(environment.api_v3_url+'discover/movie?api_key='+environment.api_key+'&with_genres='+id_genre);
   }
 
   /**

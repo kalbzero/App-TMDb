@@ -2,9 +2,38 @@
 
 .movie {
     height: 300px;
-    border: 1px solid black; //transparent
+    border: 1px solid transparent;
     border-radius: 8px;
+    display: relative;
 }
-.image {
-    height: 70%;
+.movie img {
+    height: 90%;
+    width: 90%;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.movie div {
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    padding-top: 8px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+}
+.movie p {
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 768px){
+ .movie{
+    height: 600px;   
+ }
+ .movie p {
+    font-size: 18px;
+}  
 }

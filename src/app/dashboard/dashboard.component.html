@@ -1,1 +1,253 @@
-<p>dashboard works!</p>
+<div class="container">
+    <div class="py-5 text-center title-screen">
+      <p class="font-40 font-weight-bold">APP TMDb</p>
+      <p>Aplicação que utiliza a API TMDb para exibir filmes e séries para o usuário avaliar</p>
+    </div>
+
+    <p class="title mt-5">Action</p>
+    <ngb-carousel class="mb-5" *ngIf="listAction" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listAction">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+    
+    <p class="title mt-5">Adventure</p>
+    <ngb-carousel class="mb-5" *ngIf="listAdventure" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listAdventure ">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+    
+    <p class="title mt-5">Animation</p>
+    <ngb-carousel class="mb-5" *ngIf="listAnimation" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listAnimation ">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Comedy</p>
+    <ngb-carousel class="mb-5" *ngIf="listComedy" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listComedy ">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Crime</p>
+    <ngb-carousel class="mb-5" *ngIf="listCrime" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listCrime">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Documentary</p>
+    <ngb-carousel class="mb-5" *ngIf="listDocumentary" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listDocumentary ">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Drama</p>
+    <ngb-carousel class="mb-5" *ngIf="listDrama" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listDrama ">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Family</p>
+    <ngb-carousel class="mb-5" *ngIf="listFamily" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listFamily">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Fantasy</p>
+    <ngb-carousel class="mb-5" *ngIf="listFantasy" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listFantasy">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">History</p>
+    <ngb-carousel class="mb-5" *ngIf="listHistory" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listHistory">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Horror</p>
+    <ngb-carousel class="mb-5" *ngIf="listHorror" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listHorror">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Music</p>
+    <ngb-carousel class="mb-5" *ngIf="listMusic" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listMusic">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Mystery</p>
+    <ngb-carousel class="mb-5" *ngIf="listMystery" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listMystery">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Romance</p>
+    <ngb-carousel class="mb-5" *ngIf="listRomance" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listRomance">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Sci-Fi</p>
+    <ngb-carousel class="mb-5" *ngIf="listScienceFiction" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listScienceFiction ">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">TV Movie</p>
+    <ngb-carousel class="mb-5" *ngIf="listTVMovie" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listTVMovie ">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Thriller</p>
+    <ngb-carousel class="mb-5" *ngIf="listThriller" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listThriller">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">War</p>
+    <ngb-carousel class="mb-5" *ngIf="listWar" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listWar ">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <p class="title mt-5">Western</p>
+    <ngb-carousel class="mb-5" *ngIf="listWestern" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+      <ng-template ngbSlide *ngFor="let m of listWestern ">
+        <div class="picsum-img-wrapper">
+          <img [src]="getPosterLink(m)" alt="movie poster">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{m.title}}</h3>
+          <p class="px-1">{{m.overview}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+</div>
