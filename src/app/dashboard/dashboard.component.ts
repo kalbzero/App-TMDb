@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from "@angular/router";
 
 import { ApiTmdbService } from '../shared/services/api-tmdb.service';
+import { RouteEnum } from '../shared/enum/route-enum';
 import { IMovie } from '../shared/interfaces/imovie';
 import { Genres } from '../shared/class/genres';
 import { Movie } from '../shared/class/movie';
@@ -50,6 +52,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private apiTmdbService: ApiTmdbService,
+    private router: Router,
     private config: NgbCarouselConfig,
   ) { 
     config.showNavigationArrows = this.showNavigationArrows;
@@ -165,6 +168,11 @@ export class DashboardComponent implements OnInit {
       }
     );
   }
+
+  /**
+   * Return the url string of the image
+   * @param movie - object movie
+   */
   getPosterLink(movie: IMovie): string {
     let url = '';
     if(movie.backdrop_path === '' || movie.backdrop_path === null){
@@ -178,5 +186,12 @@ export class DashboardComponent implements OnInit {
       url ='assets/img/noImage.png';
     }
     return url;
+  }
+
+  /**
+   * Open the Movie Page Infos 
+   */
+  openMovie(movieId: number) {
+    this.router.navigate(['movie/' + movieId]);
   }
 }

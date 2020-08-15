@@ -15,5 +15,10 @@ export enum RouteEnum {
     /**
      * the top100 route
      */
-    TOP100 = "top100"
+    TOP100 = "top100",
+
+    /**
+     * the movie id route
+     */
+    MOVIE = "movie/:id"
 }

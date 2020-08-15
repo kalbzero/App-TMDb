@@ -7,9 +7,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MovieComponent } from './movie/movie.component';
 import { SharedModule } from './shared/shared.module';
 import { Top100Component } from './top100/top100.component';
-import { MovieComponent } from './movie/movie.component';
+
 
 @NgModule({
   declarations: [
