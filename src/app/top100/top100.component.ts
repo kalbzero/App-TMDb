@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ApiTmdbService } from '../shared/services/api-tmdb.service';
 
@@ -15,12 +16,18 @@ export class Top100Component implements OnInit {
   movies: any[];
 
   constructor(
-    private apiTmdbService: ApiTmdbService
+    private apiTmdbService: ApiTmdbService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
     this.movies = this.apiTmdbService.getTopRated();
-    console.log(this.movies);
   }
 
+  /**
+   * Open the Movie Page Infos 
+   */
+  openMovie(movieId: number) {
+    this.router.navigate(['movie/' + movieId]);
+  }
 }
