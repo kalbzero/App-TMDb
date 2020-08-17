@@ -1,3 +1,5 @@
+import { Genres } from '../class/genres';
+
 export interface IMovie {
     id: number;
     title: string;
@@ -6,4 +8,7 @@ export interface IMovie {
     vote_average: number;
     backdrop_path: string;
     poster_path: string;
+
+    genres: Genres[];
+    tagline: string;
 }
