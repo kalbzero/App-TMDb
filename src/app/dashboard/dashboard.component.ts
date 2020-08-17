@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from "@angular/router";
 
+// import {SessionStorageService} from 'ngx-webstorage';
+
 import { ApiTmdbService } from '../shared/services/api-tmdb.service';
 import { RouteEnum } from '../shared/enum/route-enum';
 import { IMovie } from '../shared/interfaces/imovie';
@@ -54,12 +56,17 @@ export class DashboardComponent implements OnInit {
     private apiTmdbService: ApiTmdbService,
     private router: Router,
     private config: NgbCarouselConfig,
+    // private sessionStorageService: SessionStorageService,
   ) { 
     config.showNavigationArrows = this.showNavigationArrows;
     config.showNavigationIndicators = this.showNavigationIndicators;
   }
 
   ngOnInit() {
+
+    // sessio guest user
+
+    // list movies by genres
     this.apiTmdbService.getGenres().subscribe(
       (list: Genres) => {
         
@@ -92,7 +99,7 @@ export class DashboardComponent implements OnInit {
               break;
             case 99: //Documentary
               this.apiTmdbService.getMoviesByGenre(genre.id).subscribe(
-                (movies: Movie) => { this.listDocumentary = movies.results; console.log(movies.results);}
+                (movies: Movie) => { this.listDocumentary = movies.results;}
               );
               break;
             case 18: //Drama

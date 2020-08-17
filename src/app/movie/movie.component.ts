@@ -4,7 +4,9 @@ import { Location } from '@angular/common';
 
 import { ApiTmdbService } from '../shared/services/api-tmdb.service';
 import { IMovie } from '../shared/interfaces/imovie';
-
+import { ICast } from '../shared/interfaces/icast';
+import { ICrew } from '../shared/interfaces/icrew';
+import { Credits } from '../shared/class/credits';
 
 @Component({
   selector: 'app-movie',
@@ -23,6 +25,16 @@ export class MovieComponent implements OnInit {
    */
   movie: IMovie;
 
+  /**
+   * the movie actors
+   */
+  cast: ICast[] = [];
+
+  /**
+   * the movie directors and others
+   */
+  crew: ICrew[] = [];
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private location: Location,
@@ -32,21 +44,31 @@ export class MovieComponent implements OnInit {
   ngOnInit() {
     this.movieId = this.activatedRoute.snapshot.params.id
     this.getMovie(this.movieId);
+    this.getMovieCredits(this.movieId);
   }
+
   /**
   * Get the movie infos
   */
   getMovie(id: number) {
     this.apiTMDBService.getMovieById(id).subscribe(
-      (movie: IMovie) => {this.movie = movie; console.log(movie);}
+      (movie: IMovie) => {this.movie = movie;}
     );
   }
 
   /**
-   * Go back to preview page
+   * Get the movie actors
    */
-  goBack() {
-    this.location.back();
+  getMovieCredits(id: number) {
+    this.apiTMDBService.getMovieCredits(id).subscribe(
+      (credits: Credits) => {this.cast = credits.cast.slice(0,10); 
+        credits.crew.forEach( (c: ICrew) => {
+          if(c.job == 'Director') {
+            this.crew.push(c);
+          }
+        });
+      }
+    );
   }
 
   /**

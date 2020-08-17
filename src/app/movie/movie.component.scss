@@ -1,0 +1,14 @@
+@import '../../scss/color.scss';
+
+.poster img {
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+.genres > span + span:before, .directors > span + span:before {
+    content: ', ';
+}
+@media only screen and (max-width: 768px) {
+    .poster img {
+        margin: 20px 21%;
+    }
+}

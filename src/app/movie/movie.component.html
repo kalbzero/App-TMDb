@@ -1,1 +1,32 @@
-<p>movie works!</p>
+<div *ngIf="movie" class="container">
+    <div class="row my-5">
+        <div class="col-md-3 col-12 poster">
+            <img src="https://image.tmdb.org/t/p/w220_and_h330_face{{movie.poster_path}}" srcset="https://image.tmdb.org/t/p/w220_and_h330_face{{movie.poster_path}} 1x, https://image.tmdb.org/t/p/w440_and_h660_face{{movie.poster_path}} 2x" alt="Poster">
+        </div>
+        <div class="col-md-9 col-12">
+            <p class="title">{{movie.title}} ({{movie.release_date | date: 'yyyy'}})</p>
+            <p class="subtitle font-italic">{{movie.tagline}}</p>
+            <p class="genres">
+                Gênero: <span *ngFor="let g of movie.genres">{{g.name}} </span>
+            </p>
+            <p class="directors">
+                Diretor(es): <span *ngFor="let d of crew">{{d.name}}</span>
+            </p>
+            <p>
+                <span class="d-block font-weight-bold">Sinopse</span>
+                <span>{{movie.overview}}</span>
+            </p>
+        </div>
+    </div>
+
+    <p class="title">Elenco Principal</p>
+    <div class="row">
+        <div class="col-6 col-md-2 poster" *ngFor="let c of cast">
+            <img class="" data-src="https://image.tmdb.org/t/p/w138_and_h175_face{{c.profile_path}}" data-srcset="https://image.tmdb.org/t/p/w138_and_h175_face{{c.profile_path}} 1x, https://image.tmdb.org/t/p/w276_and_h350_face{{c.profile_path}} 2x" alt="{{c.name}}" src="https://image.tmdb.org/t/p/w138_and_h175_face{{c.profile_path}}" srcset="https://image.tmdb.org/t/p/w138_and_h175_face{{c.profile_path}} 1x, https://image.tmdb.org/t/p/w276_and_h350_face{{c.profile_path}} 2x" data-loaded="true">
+            <p>
+                <span class="font-weight-bold d-block">{{c.name}}</span>
+                <span>{{c.character}}</span>
+            </p>
+        </div>
+    </div>
+</div>

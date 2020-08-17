@@ -9,6 +9,7 @@ import { User } from '../interfaces/user';
 import { IMovie } from '../interfaces/imovie';
 import { Movie } from '../class/movie';
 import { Genres } from '../class/genres';
+import { Credits } from '../class/credits';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,10 @@ export class ApiTmdbService {
    */
   getMovieById(id: number): Observable<IMovie> {
     return this.http.get<IMovie>(environment.api_v3_url+'movie/'+id+'?api_key='+environment.api_key);
+  }
+
+  getMovieCredits(id: number): Observable<Credits> {
+    return this.http.get<Credits>(environment.api_v3_url+'movie/'+id+'/credits?api_key='+environment.api_key);
   }
 
   /**

@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+// import { NgxWebstorageModule } from 'ngx-webstorage';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -24,6 +26,7 @@ import { Top100Component } from './top100/top100.component';
     AppRoutingModule,
     HttpClientModule,
     MatCardModule,
+    // NgxWebstorageModule.forRoot(),
     SharedModule,
     NgbModule
   ],
